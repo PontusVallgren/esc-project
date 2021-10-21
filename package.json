@@ -1,0 +1,22 @@
+{
+  "name": "esc-project",
+  "version": "1.0.0",
+  "description": "Website for Hacker Escapse Rooms",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PontusVallgren/esc-project.git"
+  },
+  "author": "Pontus Vallgren",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PontusVallgren/esc-project/issues"
+  },
+  "homepage": "https://github.com/PontusVallgren/esc-project#readme",
+  "dependencies": {
+    "sass": "^1.43.2"
+  }
+}
