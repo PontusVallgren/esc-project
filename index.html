@@ -15,14 +15,14 @@
     <title>Hacker Escape Rooms</title>
   </head>
   <body>
-    <div class="wrapper">
+    <div class="grid-template">
       <header class="header">
-        <div class="title-logo">
-          <img src="https://picsum.photos/100/100" />
+        <div class="header-logo">
+          <img src="https://picsum.photos/100/100" alt="Company logo"/>
           <h1>[Esc] Hacker Espace Rooms</h1>
         </div>
       </header>
-      <nav class="navbar">
+      <nav>
         <ul>
           <a href="#">Play online</a>
           <a href="#">Play on-site</a>
@@ -30,43 +30,37 @@
           <a href="#">Contact us</a>
         </ul>
       </nav>
-      <div class="hero-img">
-        <img style="background-color: lightgray;" src="#" />
-        <div class="hero-btn-ctn">
+      <div class="hero-image">
+        <img src="#"/>
+        <div class="hero-buttons">
           <a href="#"><i class="fas fa-laptop"></i>Online challenges</a>
           <a href="#"><i class="fas fa-home"></i>On-site challenges</a>
         </div>
       </div>
-      <div class="quote-ctn">
-        <div class="quote">
-          <img src="https://picsum.photos/100/100" />
-          <div class="quote-text-ctn">
-          <span class="quote-text"
-            >This is a quote about how amazing this place is and how much fun me
-            and my friends had when we tried it</span
-          >
-          <span class="author-text">- Quote Author</span>
-          </div>
-        </div>
-        <!-- kolla <blockquote> , figure, cite -->
-        <div class="quote">
-          <img src="https://picsum.photos/100/100" />
-          <div class="quote-text-ctn">
-          <span class="quote-text">
-            This is a quote about how amazing this place is and how much fun me
-            and my friends had when we tried it</span>
-          <span class="author-text">- Quote Author</span>
-          </div>
-          </div>
-        </div>
-        <div class="challenges-ctn">
-            <h2>Popular challenges right now</h3>
-        <div class="challenges-content-ctn">
-            <div class="challenges-info-ctn">
-                <div class="challenge-info-img">
-                <img  src="#" >
+      <section class="quote-ctn">
+        <figure class="quote-card">
+          <img src="https://picsum.photos/100/100" alt="Customer making the quote"/>
+            <blockquote cite="Customer">
+                <p>This is a quote about how amazing this place is and how much fun me and my friends had when we tried it</p>
+            </blockquote>
+          <figcaption>- Quote Author</figcaption>
+          </figure>
+        <figure class="quote-card">
+          <img src="https://picsum.photos/100/100" alt="Customer making the quote"/>
+            <blockquote cite="Customer">
+                <p>This is a quote about how amazing this place is and how much fun me and my friends had when we tried it</p>
+            </blockquote>
+          <figcaption>- Quote Author</figcaption>
+          </figure>
+        </section>
+        <main class="challenges-ctn">
+            <h2>Popular challenges right now</h2>
+        <div class="challenges">
+            <div class="challenges-card">
+                <div class="challenge-image">
+                <img src="#" alt="Showing example of espace room">
                 <i class="fas fa-laptop"></i>
-                <div class="star-ctn">
+                <div class="rating">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -79,11 +73,11 @@
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the</p>
                 <a href="#">Take challenge online</a>
             </div>
-            <div class="challenges-info-ctn">
-                <div class="challenge-info-img">
-                <img  src="#" >
+            <div class="challenges-card">
+                <div class="challenge-image">
+                <img src="#" alt="Showing example of espace room">
                 <i class="fas fa-laptop"></i>
-                <div class="star-ctn">
+                <div class="rating">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -96,11 +90,11 @@
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the</p>
                 <a href="#">Book this room</a>
             </div>
-            <div class="challenges-info-ctn">
-                <div class="challenge-info-img">
-                <img  src="#" >
+            <div class="challenges-card">
+                <div class="challenge-image">
+                <img src="#" alt="Showing example of espace room">
                 <i class="fas fa-home"></i>
-                <div class="star-ctn">
+                <div class="rating">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -118,30 +112,29 @@
             <a href="#"><i class="fas fa-laptop"></i>All online challenges</a>
             <a href="#"><i class="fas fa-home"></i>All on-site challenges</a>
         </div>
-    </div>
-        <div class="story-section">
+    </main>
+        <section class="story">
             <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin</p>
             <a href="#">Read the full story</a>
+        </section>
+        <div class="teambuilding-img">
+            <img href="#" alt="Group of people in escape room">
         </div>
-        <!-- Find better class names -->
-        <div class="teamwork-img">
-            <img href="#">
-        </div>
-        <div class="book-info-section">
+        <section class="book-information">
             <h3>Play with your friends or build your team stronger at work</h2>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the</p>
             <a href="#">Book on-site today</a>
-        </div>
-        <div class="book-info-section-two">
+            </section>
+        <section class="book-information-two">
             <h3>Play with your friends or build your team stronger at work</h2>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the</p>
             <a href="#"><i class="fas fa-laptop"></i>Play online</a>
             <a href="#"><i class="fas fa-home"></i>Book on-site</a>
+            </section>
+            <div class="teambuilding-img-two">
+            <img href="#" alt="Group of people in escape room">
         </div>
-            <div class="teamwork-img-two">
-            <img href="#">
-        </div>
-        <footer class="footer"> 
+        <footer> 
             <section class="about">
                 <h3>[Esc] Hacker Escapse Rooms</h3>
                 <p>Sollicitant homines non sunt nisi quam formae rerum prinxipiis opiniones. Mors enim est terriblis ut Socrati aliud esse apparet. Sed timor mortis est notio</p>
