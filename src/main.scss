@@ -17,8 +17,7 @@ html {
 /* || Header and Main Navigation */
 
 .header {
-  grid-column: span 13;
-  height: 5em;
+  grid-column: span 12;
   padding: 1em 1em 0 1em;
 }
 .header-logo {
@@ -35,8 +34,8 @@ html {
     text-align: center;
   }
 }
-nav {
-  grid-column: span 13;
+.navbar {
+  grid-column: span 12;
 
   ul {
     display: flex;
@@ -56,16 +55,19 @@ nav {
     color: black;
   }
 }
+/* || Main Content */
+.main {
+  grid-column: span 12;
+}
 
 .hero-image {
-  grid-column: span 13;
-  height: 17em;
-  width: 100%;
-  background-color: lightgray;
+  grid-column: span 12;
+  height: 275px;
 
   img {
     height: 100%;
     width: 100%;
+    object-fit: cover;
     background-color: lightgray;
   }
 }
@@ -89,11 +91,8 @@ nav {
     font-size: 0.8em;
   }
 }
-
-/* || Main Content */
-
 .quote-ctn {
-  grid-column: span 13;
+  grid-column: span 12;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -124,9 +123,8 @@ nav {
 }
 
 .challenges-ctn {
-  grid-column: span 13;
+  grid-column: span 12;
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -232,8 +230,8 @@ nav {
     margin: 0 0.6em;
   }
 }
-.story {
-  grid-column: span 13;
+.aboutUs {
+  grid-column: span 12;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -259,24 +257,36 @@ nav {
   }
 }
 /* MIXIN */
+
+.booking-information {
+  grid-column: span 12;
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-card {
+  display: flex;
+  flex-direction: row;
+}
 .teambuilding-img {
-  grid-column: 1 / 7;
-  height: 17em;
+  width: 100%;
+  height: 275px;
   background-color: lightgrey;
 }
 
 .book-information {
-  grid-column: 7 / 14;
-  padding: 2em 1.5em;
+  width: 100%;
 
   h3 {
     font-size: 1.2rem;
     line-height: 1.5rem;
     margin: 0 0 0.6em 0;
+    padding: 0 1rem;
   }
   p {
     font-size: 0.9rem;
     line-height: 1.3rem;
+    padding: 0 1rem;
   }
   a {
     background-color: rgb(61, 61, 255);
@@ -286,23 +296,24 @@ nav {
     text-decoration: none;
     width: 10em;
     padding: 0.6em;
-    margin: 1em 0 0 0;
+    margin: 1rem 0 0 1rem;
     border-radius: 0.3em;
   }
 }
 
 .book-information-two {
-  grid-column: 1 / 7;
-  padding: 2em 1.5em;
+  width: 100%;
 
   h3 {
     font-size: 1.2rem;
     line-height: 1.5rem;
     margin: 0 0 0.6em 0;
+    padding: 0 1rem;
   }
   p {
     font-size: 0.9rem;
     line-height: 1.3rem;
+    padding: 0 1rem;
   }
   a {
     background-color: rgb(61, 61, 255);
@@ -312,7 +323,7 @@ nav {
     text-decoration: none;
     width: 10em;
     padding: 0.6em;
-    margin: 1em 0.5em 0 0;
+    margin: 1rem 0.5rem 0 1rem;
     border-radius: 0.3em;
   }
   i {
@@ -321,15 +332,14 @@ nav {
   }
 }
 .teambuilding-img-two {
-  grid-column: 7 / 14;
-  height: 17em;
+  width: 100%;
+  height: 275px;
   background-color: lightgrey;
 }
 
-footer {
+.footer {
+  grid-column: span 12;
   background-color: lightsteelblue;
-  grid-column: span 13;
-  height: 17em;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -337,7 +347,7 @@ footer {
   padding: 5em 0;
 }
 
-.about {
+.company {
   display: block;
   width: 40%;
 
@@ -366,7 +376,7 @@ footer {
   }
 }
 
-.socialmedia {
+.social {
   h3 {
     font-size: 0.9rem;
   }
