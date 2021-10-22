@@ -15,7 +15,6 @@ html {
 }
 
 /* || Header and Main Navigation */
-
 .header {
   grid-column: span 12;
   padding: 1em 1em 0 1em;
@@ -27,7 +26,7 @@ html {
 
   img {
     border-radius: 50%;
-    height: 4em;
+    height: 64px;
   }
   h1 {
     margin: 0 0 0 0.5em;
@@ -55,7 +54,44 @@ html {
     color: black;
   }
 }
+// Mobile
+.header-mobile {
+  display: none;
+  grid-column: span 12;
+  padding: 1em 1em;
+
+  img {
+    float: left;
+    border-radius: 50%;
+    height: 64px;
+    margin: 0 0.5em 0 0;
+  }
+  h1 {
+    width: 100%;
+  }
+  p {
+    width: 100%;
+  }
+  nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0.5em 0.5em;
+    font-size: 2.5em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .header {
+    display: none;
+  }
+  .header-mobile {
+    display: block;
+  }
+}
+
 /* || Main Content */
+
 .main {
   grid-column: span 12;
 }
