@@ -1,30 +1,30 @@
-@mixin quote-card {
-  display: block;
-  position: relative;
-  height: 100%;
-  text-align: left;
-  margin: 5em 1em;
-  line-height: 1.4;
+$primary-btn-bgcolor: blue;
+$primary-btn-textcolor: white;
 
-  img {
-    float: left;
-    border-radius: 50%;
-    padding: 0 0.5em;
-    height: 4.5em;
-  }
-  p {
-    display: block;
-    font-style: italic;
-    font-size: 1rem;
-  }
-  figcaption {
-    display: block;
-    font-size: 0.8rem;
-  }
+$secondary-btn-bgcolor: white;
+$secondary-btn-textcolor: blue;
+
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
 }
-@mixin button {
+@mixin primary-btn($bgColor, $textColor, $size) {
+  background-color: $bgColor;
+  color: $textColor;
   text-align: center;
   text-decoration: none;
+  border-radius: 0.3rem;
+  padding: 0.6rem 1rem;
+  font-size: $size;
+}
+@mixin secondary-btn($bgColor, $textColor) {
+  background-color: $bgColor;
+  color: $textColor;
+  text-align: center;
+  text-decoration: none;
+  border: solid 0.15em lightgray;
   padding: 0.5em 1.1em;
   border-radius: 0.3em;
 }
@@ -46,32 +46,30 @@ html {
 }
 
 /* || Header and Main Navigation */
-.header {
+header {
   grid-column: span 12;
-  padding: 1em 1em 0 1em;
 }
 .header-logo {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
+  @include flex(row, flex-start, center);
   img {
     border-radius: 50%;
     height: 64px;
+    margin: 1rem 0 0 1rem;
   }
+}
+.header-text {
+  @include flex(row, center, center);
+  margin: 0 0 0 1rem;
+
   h1 {
-    margin: 0 0 0 0.5em;
-    text-align: center;
+    margin: 0 0.5rem 0 0;
   }
 }
 .navbar {
   grid-column: span 12;
 
   ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: flex-end;
+    @include flex(row, space-around, flex-end);
     margin: 0 2em;
   }
   a {
@@ -85,49 +83,43 @@ html {
     color: black;
   }
 }
-// Mobile
-.header-mobile {
+.navbar-mobile {
   display: none;
-  grid-column: span 12;
-  padding: 1em 1em;
+}
 
-  img {
-    float: left;
-    border-radius: 50%;
-    height: 64px;
-    margin: 0 0.5em 0 0;
+@media screen and (max-width: 800px) {
+  .header-text {
+    @include flex(column, center, flex-start);
+
+    h2 {
+      font-size: 0.9rem;
+    }
   }
-  h1 {
-    width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  .navbar {
+    display: none;
   }
-  p {
-    width: 100%;
-  }
-  nav {
+  .navbar-mobile {
+    display: block;
     position: absolute;
     top: 0;
     right: 0;
-    margin: 0.5em 0.5em;
-    font-size: 2.5em;
-  }
-}
-@media screen and (max-width: 800px) {
-  .header {
-    display: none;
-  }
-  .header-mobile {
-    display: block;
+    font-size: 2.5rem;
+    margin: 1rem 1rem 0 0;
   }
 }
 
 /* || Main Content */
 
-/* .main {
+main {
   display: grid;
   grid-column: span 12;
-} */
+  grid-template-columns: repeat(12, 1fr);
+}
 
-.hero-image {
+.hero-container {
   grid-column: span 12;
   height: 275px;
 
@@ -139,20 +131,17 @@ html {
   }
 }
 @media screen and (max-width: 800px) {
-  .hero-image {
+  .hero-container {
     height: 150px;
   }
 }
-.hero-buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+.hero-buttons-container {
+  @include flex(row, center, center);
+  transform: translateY(-50%);
 
   .hero-online-button {
-    @include button();
-    background-color: rgb(61, 61, 255);
-    color: white;
-    margin: -1em 0.6em 0 0.6em;
+    @include primary-btn($primary-btn-bgcolor, $primary-btn-textcolor, 1rem);
+    margin: 0 0.5rem;
 
     i {
       margin-right: 0.5em;
@@ -160,10 +149,8 @@ html {
     }
   }
   .hero-onSite-button {
-    @include button();
-    background-color: rgb(61, 61, 255);
-    color: white;
-    margin: -1em 0.6em 0 0.6em;
+    @include primary-btn($primary-btn-bgcolor, $primary-btn-textcolor, 1rem);
+    margin: 0 0.5rem;
 
     i {
       margin-right: 0.5em;
@@ -191,14 +178,41 @@ html {
     width: 12em;
   }
 }
-.quote-one {
-  @include quote-card();
-  grid-column: 2 / 7;
+.section-title {
+  grid-column: span 12;
+  @include flex(row, center, center);
+
+  h2 {
+    text-align: center;
+    margin: 0 0 2em 0;
+  }
 }
-.quote-two {
-  @include quote-card();
-  grid-column: 7 / 11;
+.review-container {
+  @include flex(row, center, center);
+  grid-column: span 12;
+  margin: 5rem 2rem;
 }
+.review-card {
+  @include flex(row, center, center);
+
+  img {
+    float: left;
+    border-radius: 50%;
+    padding: 0 0.5em;
+    height: 4.5em;
+  }
+  p {
+    display: block;
+    font-style: italic;
+    font-size: 1rem;
+  }
+  figcaption {
+    display: block;
+    font-size: 0.8rem;
+    margin: 0.3rem 0;
+  }
+}
+
 @media screen and (max-width: 800px) {
   .quote-two {
     display: none;
@@ -207,20 +221,9 @@ html {
     grid-column: span 12;
   }
 }
-
-.challenge-title {
+.card-article-container {
   grid-column: span 12;
-
-  h2 {
-    text-align: center;
-    margin: 0 0 2em 0;
-  }
-}
-.challenges {
-  grid-column: span 12;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  @include flex(row, center, center);
   height: 100%;
 }
 @media screen and (max-width: 800px) {
@@ -229,39 +232,17 @@ html {
     overflow-x: scroll;
   }
 }
-.challenges-card {
+.card {
   border: solid 0.15em rgba(138, 137, 137, 0.452);
   height: 100%;
   min-width: 14.4rem;
   margin: 0 0.8em;
 
-  h3 {
-    font-size: 1rem;
-    padding: 0.2rem 0.5rem 0 0.5rem;
-  }
-  span {
-    display: inherit;
-    font-size: 0.6rem;
-    padding: 0 0.5rem 0.5rem 0.5rem;
-  }
-  p {
-    font-size: 0.8rem;
-    padding: 0 0.5rem;
-  }
   a {
-    background-color: rgb(84, 84, 250);
-    display: block;
-    float: right;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 0.3em;
-    padding: 0.6em 1em;
-    margin: 0.7em 0.7em;
-    font-size: 0.9rem;
+    @include primary-btn($primary-btn-bgcolor, $primary-btn-textcolor, 0.9rem);
   }
 }
-.challenge-image {
+.card-image {
   position: relative;
   width: 100%;
   height: 8em;
@@ -289,7 +270,7 @@ html {
 .rating {
   position: absolute;
   bottom: 0;
-  margin: 0 0 0.3em 0.8em;
+  margin: 0 0 0.3rem 0.5rem;
   color: lightgreen;
 
   i {
@@ -297,42 +278,56 @@ html {
     color: rgb(65, 65, 253);
   }
 }
-.challenge-buttons {
+.card-text-container {
+  h3 {
+    font-size: 1rem;
+    padding: 0.2rem 0 0 0.5rem;
+  }
+  small {
+    display: inherit;
+    padding: 0 0 0.5rem 0.5rem;
+  }
+  p {
+    font-size: 0.8rem;
+    padding: 0 0 0 0.5rem;
+  }
+}
+.card-btn-container {
+  display: block;
+  float: right;
+  margin: 1rem 0.7rem;
+}
+.challenges-buttons-container {
   grid-column: span 12;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  @include flex(row, center, center);
   margin: 3em 0 0 0;
 
   a {
-    background-color: white;
-    color: rgb(61, 61, 255);
-    text-align: center;
-    text-decoration: none;
-    border: solid 0.15em lightgray;
-    padding: 0.5em 1.1em;
+    @include secondary-btn($secondary-btn-bgcolor, $secondary-btn-textcolor);
     margin: 0 0.4em;
-    border-radius: 0.3em;
   }
   i {
     font-size: 0.8rem;
     margin: 0 0.6em;
+    border-bottom: none;
   }
 }
 @media screen and (max-width: 800px) {
   .challenge-buttons {
     flex-direction: column;
     a {
+      align-self: center;
+      padding: 0.1em 0;
+      margin: 0.5em 0;
       border: none;
+      border-radius: 0;
       border-bottom: solid 0.15em black;
     }
   }
 }
-.aboutUs {
+.story-section {
   grid-column: span 12;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex(column, center, center);
   padding: 3em 2em;
   margin: 4em 0 0 0;
 
@@ -344,105 +339,76 @@ html {
     width: 100%;
   }
   a {
-    color: rgb(61, 61, 255);
+    @include secondary-btn($secondary-btn-bgcolor, $secondary-btn-textcolor);
     font-size: 0.9rem;
-    text-align: center;
-    text-decoration: none;
-    border: solid 0.15em lightgray;
-    padding: 0.5em 1.1em;
-    border-radius: 0.3em;
     margin: 3em 0 0 0;
   }
 }
 /* MIXIN */
 
-.booking-information {
+.sales-section-container {
   grid-column: span 12;
-  display: flex;
-  flex-direction: column;
+  @include flex(column, center, center);
 }
 
-.booking-card {
+.sale-card {
   display: flex;
   flex-direction: row;
+  width: 100%;
 }
-.teambuilding-img {
+@media screen and (max-width: 800px) {
+  .booking-card-one {
+    flex-direction: column;
+  }
+  .booking-card-two {
+    flex-direction: column-reverse;
+  }
+}
+.sale-content-container {
+  width: 100%;
+}
+.sale-text-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  h3 {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    margin: 2rem 2rem 1rem 2rem;
+  }
+  p {
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+    margin: 0 2rem;
+  }
+}
+.sale-image-container {
   width: 100%;
   height: 275px;
   background-color: lightgrey;
 }
+.sale-buttons-container {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem 2rem;
 
-.book-information {
-  width: 100%;
-
-  h3 {
-    font-size: 1.2rem;
-    line-height: 1.5rem;
-    margin: 0 0 0.6em 0;
-    padding: 0 1rem;
-  }
-  p {
-    font-size: 0.9rem;
-    line-height: 1.3rem;
-    padding: 0 1rem;
-  }
   a {
-    background-color: rgb(61, 61, 255);
-    display: block;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    width: 10em;
-    padding: 0.6em;
-    margin: 1rem 0 0 1rem;
-    border-radius: 0.3em;
-  }
-}
-
-.book-information-two {
-  width: 100%;
-
-  h3 {
-    font-size: 1.2rem;
-    line-height: 1.5rem;
-    margin: 0 0 0.6em 0;
-    padding: 0 1rem;
-  }
-  p {
-    font-size: 0.9rem;
-    line-height: 1.3rem;
-    padding: 0 1rem;
-  }
-  a {
-    background-color: rgb(61, 61, 255);
-    display: inline-block;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    width: 10em;
-    padding: 0.6em;
-    margin: 1rem 0.5rem 0 1rem;
-    border-radius: 0.3em;
+    @include primary-btn($primary-btn-bgcolor, $primary-btn-textcolor, 1rem);
+    margin: 0 0.5rem 0 0;
   }
   i {
     font-size: 0.9rem;
     margin: 0 0.6em 0 0;
   }
 }
-.teambuilding-img-two {
-  width: 100%;
-  height: 275px;
-  background-color: lightgrey;
-}
 
-.footer {
+footer {
   grid-column: span 12;
-  background-color: lightsteelblue;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  @include flex(row, space-evenly, flex-start);
   margin: 5em 0 0 0;
   padding: 5em 0;
+  background-color: lightsteelblue;
 }
 
 .company {
