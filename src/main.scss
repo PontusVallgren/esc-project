@@ -221,23 +221,18 @@ main {
   }
 }
 
-@media screen and (max-width: 800px) {
-  .quote-two {
-    display: none;
-  }
-  .quote-one {
-    grid-column: span 12;
-  }
-}
 .card-article-container {
   grid-column: span 12;
   @include flex(row, center, center);
   height: 100%;
 }
 @media screen and (max-width: 800px) {
-  .challenges {
+  .card-article-container {
     justify-content: flex-start;
     overflow-x: scroll;
+  }
+  ::-webkit-scrollbar {
+    display: none;
   }
 }
 .card {
@@ -483,8 +478,4 @@ footer {
     text-decoration: none;
     color: rgba(32, 32, 32, 0.966);
   }
-}
-////
-::-webkit-scrollbar {
-  display: none;
 }
