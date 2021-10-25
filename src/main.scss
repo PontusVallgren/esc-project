@@ -58,9 +58,6 @@ html {
 
 /* || Header and Main Navigation */
 
-header {
-  grid-column: span 12;
-}
 .header-logo {
   @include flex(row, flex-start, center);
   img {
@@ -77,28 +74,6 @@ header {
     margin: 0 0.5rem 0 0;
   }
 }
-.navbar {
-  grid-column: span 12;
-
-  ul {
-    @include flex(row, space-around, flex-end);
-    margin: 0 2em;
-  }
-  a {
-    padding: 1.2em;
-    color: rgba(82, 82, 82, 0.822);
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  a:hover {
-    color: black;
-  }
-}
-.navbar-mobile {
-  display: none;
-}
-
 @media screen and (max-width: 800px) {
   .header-text {
     @include flex(column, center, flex-start);
@@ -107,6 +82,28 @@ header {
       font-size: 0.9rem;
     }
   }
+}
+.navbar {
+  ul {
+    @include flex(row, space-around, flex-end);
+    list-style: none;
+  }
+  a {
+    color: rgba(82, 82, 82, 0.822);
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  li {
+    padding: 1em 0;
+  }
+  a:hover {
+    color: black;
+  }
+}
+.navbar-mobile {
+  display: none;
 }
 
 @media screen and (max-width: 800px) {
@@ -119,24 +116,18 @@ header {
     top: 0;
     right: 0;
     font-size: 2.5rem;
-    margin: 1rem 1rem 0 0;
+    margin: 1rem 0 0 0;
 
     i {
       font-size: 2.5rem;
+      color: black;
     }
   }
 }
 
 /* || Main Content */
 
-main {
-  display: grid;
-  grid-column: span 12;
-  grid-template-columns: repeat(12, 1fr);
-}
-
 .hero-container {
-  grid-column: span 12;
   height: 275px;
 
   img {
@@ -151,11 +142,11 @@ main {
     height: 190px;
   }
 }
-.hero-buttons-container {
+.hero-buttons {
   @include flex(row, center, center);
   transform: translateY(-50%);
 }
-.hero-onSite-button {
+.hero-onSite-btn {
   @include primary-btn($primary-btn-bgcolor, $primary-btn-textcolor, 1rem);
   margin: 0 0.5rem;
 
@@ -164,7 +155,7 @@ main {
     font-size: 0.8em;
   }
 }
-.hero-online-button {
+.hero-online-btn {
   @include primary-btn($primary-btn-bgcolor, $primary-btn-textcolor, 1rem);
   margin: 0 0.5rem;
 
@@ -174,11 +165,11 @@ main {
   }
 }
 @media screen and (max-width: 800px) {
-  .hero-buttons-container {
+  .hero-buttons {
     @include flex(column-reverse, center, center);
     transform: translateY(-30%);
   }
-  .hero-online-button {
+  .hero-online-btn {
     @include third-btn($secondary-btn-bgcolor, $secondary-btn-textcolor, 1rem);
     margin: 0.5rem 0 0 0;
     i {
@@ -186,8 +177,7 @@ main {
     }
   }
 }
-.section-title {
-  grid-column: span 12;
+.challenge-title {
   @include flex(row, center, center);
 
   h2 {
@@ -197,10 +187,9 @@ main {
 }
 .review-container {
   @include flex(row, center, center);
-  grid-column: span 12;
   margin: 5rem 2rem;
 }
-.review-card {
+.review {
   @include flex(row, center, center);
 
   img {
@@ -209,25 +198,28 @@ main {
     padding: 0 0.5em;
     height: 4.5em;
   }
-  p {
+  blockquote {
     display: block;
     font-style: italic;
     font-size: 1rem;
   }
-  figcaption {
+  cite {
     display: block;
     font-size: 0.8rem;
     margin: 0.3rem 0;
   }
 }
-
-.card-article-container {
-  grid-column: span 12;
+@media screen and (max-width: 800px) {
+  .hide {
+    display: none;
+  }
+}
+.challenges-card-container {
   @include flex(row, center, center);
   height: 100%;
 }
 @media screen and (max-width: 800px) {
-  .card-article-container {
+  .challenges-card-container {
     justify-content: flex-start;
     overflow-x: scroll;
   }
@@ -235,7 +227,7 @@ main {
     display: none;
   }
 }
-.card {
+.challenge-card {
   border: solid 0.15em rgba(138, 137, 137, 0.452);
   height: 100%;
   min-width: 14.4rem;
@@ -245,7 +237,7 @@ main {
     @include primary-btn($primary-btn-bgcolor, $primary-btn-textcolor, 0.9rem);
   }
 }
-.card-image {
+.card-image-container {
   position: relative;
   width: 100%;
   height: 8em;
@@ -270,7 +262,7 @@ main {
     right: 0;
   }
 }
-.rating {
+.challenge-rating {
   position: absolute;
   bottom: 0;
   margin: 0 0 0.3rem 0.5rem;
@@ -300,8 +292,7 @@ main {
   float: right;
   margin: 1rem 0.7rem;
 }
-.challenges-buttons-container {
-  grid-column: span 12;
+.challenge-buttons {
   @include flex(row, center, center);
   margin: 3em 0 0 0;
 }
@@ -315,7 +306,7 @@ main {
   }
 }
 @media screen and (max-width: 800px) {
-  .challenges-buttons-container {
+  .challenge-buttons {
     @include flex(column, center, center);
   }
   .challenge-btn {
@@ -327,8 +318,7 @@ main {
     margin: 0.5rem 0;
   }
 }
-.story-section {
-  grid-column: span 12;
+.company-story {
   @include flex(column, center, center);
   padding: 3em 2em;
   margin: 4em 0 0 0;
@@ -341,38 +331,37 @@ main {
     width: 100%;
   }
 }
-.story-button {
+.story-btn {
   @include secondary-btn($secondary-btn-bgcolor, $secondary-btn-textcolor);
   font-size: 0.9rem;
   margin: 3em 0 0 0;
 }
 @media screen and (max-width: 800px) {
-  .story-button {
+  .story-btn {
     font-size: 1rem;
   }
 }
 /* MIXIN */
 
-.sales-section-container {
-  grid-column: span 12;
+.grid-section-container {
   @include flex(column, center, center);
 }
-.sale-card {
+.grid-card {
   @include flex(row, center, center);
   width: 100%;
 }
 @media screen and (max-width: 800px) {
-  .sale-card {
+  .grid-card {
     @include flex(column, center, center);
   }
   .reverse {
     @include flex(column-reverse, center, center);
   }
 }
-.sale-content-container {
+.grid-content {
   width: 100%;
 }
-.sale-text-container {
+.grid-text {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -388,17 +377,17 @@ main {
     margin: 0 2rem;
   }
 }
-.sale-image-container {
+.grid-image {
   width: 100%;
   height: 275px;
   background-color: lightgrey;
 }
 @media screen and (max-width: 800px) {
-  .sale-image-container {
+  .grid-image {
     height: 150px;
   }
 }
-.sale-buttons-container {
+.grid-buttons {
   display: flex;
   flex-direction: row;
   margin: 1rem 2rem;
@@ -407,38 +396,36 @@ i {
   font-size: 0.9rem;
   margin: 0 0.6em 0 0;
 }
-.sale-online-btn {
+.grid-online-btn {
   @include primary-btn($primary-btn-bgcolor, $primary-btn-textcolor, 1rem);
   margin: 0 0.5rem 0 0;
 }
-.sale-onsite-btn {
+.grid-onsite-btn {
   @include primary-btn($primary-btn-bgcolor, $primary-btn-textcolor, 1rem);
   margin: 0 0.5rem 0 0;
 }
 
 @media screen and (max-width: 800px) {
-  .sale-buttons-container {
+  .grid-buttons {
     @include flex(column-reverse, center, flex-start);
   }
-  .sale-online-btn {
+  .grid-online-btn {
     @include third-btn($secondary-btn-bgcolor, $secondary-btn-textcolor, 1rem);
     margin: 1rem 0 0 0;
   }
 }
 
 footer {
-  grid-column: span 12;
   @include flex(row, space-evenly, flex-start);
   margin: 5em 0 0 0;
-  padding: 5em 0;
+  padding: 5rem 5rem;
   background-color: lightsteelblue;
 }
 
 .company {
-  display: block;
   width: 40%;
-
   h3 {
+    margin: 0 0 0.35rem 0;
     font-size: 0.9rem;
   }
   p {
@@ -446,6 +433,7 @@ footer {
     color: rgba(0, 0, 0, 0.801);
   }
 }
+
 .sitemap {
   h3 {
     font-size: 0.9rem;
@@ -454,10 +442,13 @@ footer {
     display: flex;
     flex-direction: column;
     font-size: 0.9rem;
-    margin: 0.5em 0 1.2em 0;
+    list-style: none;
+    margin: 0.35rem 0 0 0;
+  }
+  li {
+    padding: 0.1rem 0;
   }
   a {
-    padding: 0.15em 0;
     text-decoration: none;
     color: rgba(32, 32, 32, 0.966);
   }
@@ -471,11 +462,24 @@ footer {
     display: flex;
     flex-direction: column;
     font-size: 0.9rem;
-    margin: 0.5em 0 0 0;
+    list-style: none;
+    margin: 0.35rem 0 0 0;
+  }
+  li {
+    padding: 0.1rem 0;
   }
   a {
-    padding: 0.15em 0;
     text-decoration: none;
     color: rgba(32, 32, 32, 0.966);
+  }
+}
+@media screen and (max-width: 800px) {
+  footer {
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .company {
+    width: 100%;
+    margin: 0 0 2rem 0;
   }
 }

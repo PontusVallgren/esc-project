@@ -15,7 +15,6 @@
     <title>Hacker Escape Rooms</title>
   </head>
   <body>
-    <div class="grid-template">
       <header>
         <div class="header-logo">
             <picture>
@@ -28,57 +27,57 @@
         </div>
       <nav class="navbar">
         <ul>
-          <a href="#">Play online</a>
-          <a href="#">Play on-site</a>
-          <a href="#">The story</a>
-          <a href="#">Contact us</a>
+          <li><a href="#">Play online</a></li>   
+          <li><a href="#">Play on-site</a></li>
+          <li><a href="#">The story</a></li>
+          <li><a href="#">Contact us</a></li>
         </ul>
       </nav>
       <nav class="navbar-mobile">
-          <i class="fas fa-bars"></i>
+          <a href="#" role="button"><i class="fas fa-bars"></i></a>
       </nav>
     </header>
 
     <main>
       <section class="hero-container">
           <picture>
-              <img src="#">
+              <img src="#" alt="">
           </picture>
-        <div class="hero-buttons-container">
-          <a class="hero-online-button" href="#"><i class="fas fa-laptop"></i>Online challenges</a>
-          <a class="hero-onSite-button" href="#"><i class="fas fa-home"></i>On-site challenges</a>
+        <div class="hero-buttons">
+          <a class="hero-online-btn" href="#"><i class="fas fa-laptop"></i>Online challenges</a>
+          <a class="hero-onSite-btn" href="#"><i class="fas fa-home"></i>On-site challenges</a>
         </div>
 
     </section>
     <section class="review-container">
-        <figure class="review-card">
+        <article class="review">
           <img src="https://picsum.photos/100/100" alt=""/>
-            <blockquote cite="">
-                <p>This is a quote about how amazing this place is and how much fun me and my friends had when we tried it</p>
-                <figcaption>- Quote Author</figcaption>
+            <blockquote>
+                This is a quote about how amazing this place is and how much fun me and my friends had when we tried it
+                <cite>- Quote Author</cite>
             </blockquote>
-          </figure>
-        <figure class="review-card">
+          </article>
+        <article class="review hide">
           <img src="https://picsum.photos/100/100" alt=""/>
-            <blockquote cite="">
-                <p>This is a quote about how amazing this place is and how much fun me and my friends had when we tried it</p>
-                <figcaption>- Quote Author</figcaption>
+            <blockquote>
+                This is a quote about how amazing this place is and how much fun me and my friends had when we tried it
+                <cite>- Quote Author</cite>
             </blockquote>
-          </figure>
+          </article>
         </section>
 
-        <div class="section-title">
+        <section class="challenge-section">
+        <div class="challenge-title">
             <h2>Popular challenges right now</h2>
         </div>
-
-        <section class="card-article-container">
-            <article class="card">
-                <div class="card-image">
+        <div class="challenges-card-container">
+            <article class="challenge-card">
+                <div class="card-image-container">
             <picture>
                 <img src="#" alt="">
             </picture>
                 <i class="fas fa-laptop"></i>
-                <div class="rating">
+                <div class="challenge-rating">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -95,13 +94,13 @@
                 <a href="#">Take challenge online</a>
                 </div>
             </article>
-            <article class="card">
-                <div class="card-image">
+            <article class="challenge-card">
+                <div class="card-image-container">
             <picture>
                 <img src="#" alt="">
             </picture>
                 <i class="fas fa-laptop"></i>
-                <div class="rating">
+                <div class="challenge-rating">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -118,13 +117,13 @@
                 <a href="#">Book this room</a>
                 </div>
             </article>
-            <article class="card">
-                <div class="card-image">
+            <article class="challenge-card">
+                <div class="card-image-container">
             <picture>
                 <img src="#" alt="">
             </picture>
                 <i class="fas fa-home"></i>
-                <div class="rating">
+                <div class="challenge-rating">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -141,49 +140,50 @@
                 <a href="#">Book this room</a>
                 </div>
             </article>
-        </section>
-
-        <div class="challenges-buttons-container">
-            <button class="challenge-btn" href="#"><i class="fas fa-laptop"></i>All online challenges</button>
-            <button class="challenge-btn" href="#"><i class="fas fa-home"></i>All on-site challenges</button>
         </div>
 
-        <article class="story-section">
+        <div class="challenge-buttons">
+            <a class="challenge-btn" href="#"><i class="fas fa-laptop"></i>All online challenges</a>
+            <a class="challenge-btn" href="#"><i class="fas fa-home"></i>All on-site challenges</a>
+        </div>
+    </section>
+
+        <article class="company-story">
             <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin</p>
-            <a class="story-button" href="#">Read the full story</a>
+            <a class="story-btn" href="#">Read the full story</a>
         </article>
 
-        <section class="sales-section-container">
-        <article class="sale-card">
-        <div class="sale-image-container">
+        <section class="grid-section-container">
+        <article class="grid-card">
+        <div class="grid-image">
             <img href="#" alt="">
         </div>
-        <div class="sale-content-container">
-            <div class="sale-text-container">
+        <div class="grid-content">
+            <div class="grid-text">
             <h3>Play with your friends or build your team stronger at work</h2>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
             Lorem Ipsum has been the Lorem Ipsum is simply dummy text of the printing and typesetting industry.
             Lorem Ipsum has been the</p>
             </div>
-            <div class="sale-buttons-container">
-                <a class="sale-onsite-btn" href="#">Book on-site today</a>
+            <div class="grid-buttons">
+                <a class="grid-onsite-btn" href="#">Book on-site today</a>
             </div>
             </div>
         </article>
-            <article class="sale-card reverse">
-        <div class="sale-content-container">
-            <div class="sale-text-container">
+            <article class="grid-card reverse">
+        <div class="grid-content">
+            <div class="grid-text">
                 <h3>Play with your friends or build your team stronger at work</h2>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                 Lorem Ipsum has been the Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                 Lorem Ipsum has been the</p>
             </div>
-            <div class="sale-buttons-container">
-                <a class="sale-online-btn" href="#"><i class="fas fa-laptop"></i>Play online</a>
-                <a class="sale-onsite-btn" href="#"><i class="fas fa-home"></i>Book on-site</a>
+            <div class="grid-buttons">
+                <a class="grid-online-btn" href="#"><i class="fas fa-laptop"></i>Play online</a>
+                <a class="grid-onsite-btn" href="#"><i class="fas fa-home"></i>Book on-site</a>
             </div>
             </div>
-            <div class="sale-image-container">
+            <div class="grid-image">
             <img href="#" alt="">
         </div>
     </article>
@@ -198,25 +198,24 @@
         <section class="sitemap">
             <h3>Site map</h3>
             <ul>
-                <a href="#">The Story</a>
-                <a href="#">Contact Us</a>
-                <a href="#">Legal</a>
+                <li><a href="#">The Story</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Legal</a></li>
             </ul>
             <ul>
-                <a href="#">Play online</a>
-                <a href="#">Play on-site</a>
+                <li><a href="#">Play online</a></li>
+                <li><a href="#">Play on-site</a></li>
             </ul>
             </section>
             <section class="social">
                 <h3>Follow us on</h3>
                 <ul>
-                    <a href="#">Facebook</a>
-                    <a href="#">Instagram</a>
-                    <a href="#">YouTube</a>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">YouTube</a></li>
                 </ul>
             </section>
         </footer>
-    </div>
   </body>
 </html>
    
