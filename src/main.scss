@@ -17,18 +17,22 @@ html {
 }
 
 /* || Header and Main Navigation */
+header {
+  background-color: #011827;
+}
 
 .header-logo {
-  @include flex(row, flex-start, center);
+  @include flex(row, flex-start, flex-end);
   img {
-    border-radius: 50%;
-    height: 64px;
+    height: 82px;
+    width: 128px;
     margin: 1rem 0 0 1rem;
   }
 }
 .header-text {
   @include flex(row, center, center);
-  margin: 0 0 0 1rem;
+  color: #ffffff;
+  margin: 0 0 1rem 1rem;
 
   h1 {
     margin: 0 0.5rem 0 0;
@@ -49,7 +53,7 @@ html {
     list-style: none;
   }
   a {
-    color: rgba(82, 82, 82, 0.822);
+    color: #ffffff;
     padding: 1rem;
     text-align: center;
     text-decoration: none;
@@ -57,9 +61,6 @@ html {
   }
   li {
     padding: 1em 0;
-  }
-  a:hover {
-    color: black;
   }
 }
 .navbar-mobile {
@@ -88,13 +89,13 @@ html {
 /* || Main Content */
 
 .hero-container {
-  height: 275px;
+  height: 468px;
+  width: 100%;
 
   img {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    background-color: lightgray;
   }
 }
 @media screen and (max-width: $mobile-size) {
@@ -106,8 +107,12 @@ html {
   @include flex(row, center, center);
   transform: translateY(-50%);
 }
-.hero-onSite-btn {
-  @include primary-btn($primary-btn-bgcolor, $primary-btn-textcolor, 1rem);
+.hero-onsite-btn {
+  @include secondary-btn(
+    $secondary-btn-bgcolor,
+    $secondary-btn-textcolor,
+    1rem
+  );
   margin: 0 0.5rem;
 
   i {
@@ -118,11 +123,6 @@ html {
 .hero-online-btn {
   @include primary-btn($primary-btn-bgcolor, $primary-btn-textcolor, 1rem);
   margin: 0 0.5rem;
-
-  i {
-    margin-right: 0.5em;
-    font-size: 0.8em;
-  }
 }
 @media screen and (max-width: $mobile-size) {
   .hero-buttons {
@@ -137,14 +137,7 @@ html {
     }
   }
 }
-.challenge-title {
-  @include flex(row, center, center);
 
-  h2 {
-    text-align: center;
-    margin: 0 0 2em 0;
-  }
-}
 .review-container {
   @include flex(row, center, center);
   margin: 5rem 2rem;
@@ -174,6 +167,15 @@ html {
     display: none;
   }
 }
+
+.challenge-title {
+  @include flex(row, center, center);
+
+  h2 {
+    text-align: center;
+    margin: 0 0 2em 0;
+  }
+}
 .challenges-card-container {
   @include flex(row, center, center);
   height: 100%;
@@ -186,12 +188,16 @@ html {
   ::-webkit-scrollbar {
     display: none;
   }
+  .challenge-card {
+    min-width: 363px;
+  }
 }
 .challenge-card {
-  border: solid 0.15em rgba(138, 137, 137, 0.452);
   height: 100%;
-  min-width: 14.4rem;
+  max-width: 363px;
   margin: 0 0.8em;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
 
   a {
     @include primary-btn($primary-btn-bgcolor, $primary-btn-textcolor, 0.9rem);
@@ -200,34 +206,16 @@ html {
 .card-image-container {
   position: relative;
   width: 100%;
-  height: 8em;
+  height: 219px;
   img {
-    position: absolute;
     width: 100%;
-    height: 8em;
-  }
-  /* MIXIN ---- */
-  .fa-laptop {
-    position: absolute;
-    font-size: 1.5rem;
-    color: #333;
-    margin: 0.25em 0.25em 0 0;
-    right: 0;
-  }
-  .fa-home {
-    position: absolute;
-    font-size: 1.5rem;
-    color: #333;
-    margin: 0.25em 0.25em 0 0;
-    right: 0;
+    height: 100%;
+    border-radius: 8px 8px 0px 0px;
   }
 }
 .challenge-rating {
-  position: absolute;
-  bottom: 0;
-  margin: 0 0 0.3rem 0.5rem;
-  color: lightgreen;
-
+  @include flex(row, space-between, flex-start);
+  margin: 0 0.5rem;
   i {
     font-size: 0.75rem;
     color: rgb(65, 65, 253);
@@ -256,14 +244,17 @@ html {
   @include flex(row, center, center);
   margin: 3em 0 0 0;
 }
-.challenge-btn {
-  @include secondary-btn($secondary-btn-bgcolor, $secondary-btn-textcolor);
-  margin: 0 0.4rem;
-  i {
-    font-size: 0.8rem;
-    margin: 0 0.6em;
-    border-bottom: none;
-  }
+.challenge-online-btn {
+  @include primary-btn($primary-btn-bgcolor, $primary-btn-textcolor, 1rem);
+  margin: 0 0.5rem 0 0;
+}
+.challenge-onsite-btn {
+  @include secondary-btn(
+    $secondary-btn-bgcolor,
+    $secondary-btn-textcolor,
+    1rem
+  );
+  margin: 0 0 0 0.5rem;
 }
 @media screen and (max-width: $mobile-size) {
   .challenge-buttons {
@@ -280,19 +271,21 @@ html {
 }
 .company-story {
   @include flex(column, center, center);
-  padding: 3em 2em;
+  background-color: #011827;
+  height: 500px;
+  width: 100%;
+  padding: 3em 16em;
   margin: 4em 0 0 0;
 
   p {
     width: 100%;
+    color: #ffffff;
     font-size: 1.1rem;
     text-align: center;
-    line-height: 1.5;
-    width: 100%;
   }
 }
 .story-btn {
-  @include secondary-btn($secondary-btn-bgcolor, $secondary-btn-textcolor);
+  @include third-btn($third-btn-bgcolor, $third-btn-textcolor, 1rem);
   font-size: 0.9rem;
   margin: 3em 0 0 0;
 }
@@ -301,14 +294,13 @@ html {
     font-size: 1rem;
   }
 }
-/* MIXIN */
 
 .grid-section-container {
   @include flex(column, center, center);
 }
 .grid-card {
   @include flex(row, center, center);
-  width: 100%;
+  max-width: 1400px;
 }
 @media screen and (max-width: $mobile-size) {
   .grid-card {
@@ -329,18 +321,19 @@ html {
   h3 {
     font-size: 1.2rem;
     line-height: 1.5rem;
-    margin: 2rem 2rem 1rem 2rem;
+    margin: 0 2rem 1rem 4rem;
   }
   p {
     font-size: 0.9rem;
     line-height: 1.3rem;
-    margin: 0 2rem;
+    margin: 0 4rem;
   }
 }
 .grid-image {
   width: 100%;
-  height: 275px;
-  background-color: lightgrey;
+  img {
+    width: 100%;
+  }
 }
 @media screen and (max-width: $mobile-size) {
   .grid-image {
@@ -350,17 +343,9 @@ html {
 .grid-buttons {
   display: flex;
   flex-direction: row;
-  margin: 1rem 2rem;
+  margin: 1rem 4rem;
 }
-i {
-  font-size: 0.9rem;
-  margin: 0 0.6em 0 0;
-}
-.grid-online-btn {
-  @include primary-btn($primary-btn-bgcolor, $primary-btn-textcolor, 1rem);
-  margin: 0 0.5rem 0 0;
-}
-.grid-onsite-btn {
+.grid-btn {
   @include primary-btn($primary-btn-bgcolor, $primary-btn-textcolor, 1rem);
   margin: 0 0.5rem 0 0;
 }
@@ -369,34 +354,28 @@ i {
   .grid-buttons {
     @include flex(column-reverse, center, flex-start);
   }
-  .grid-online-btn {
-    @include third-btn($secondary-btn-bgcolor, $secondary-btn-textcolor, 1rem);
-    margin: 1rem 0 0 0;
-  }
 }
 
 footer {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: auto;
+  @include flex(row, space-around, flex-start);
   margin: 5em 0 0 0;
   padding: 5rem 2rem;
-  background-color: lightsteelblue;
+  background-color: #011827;
+  color: #ffffff;
 }
 
 .company {
-  grid-column: 1 / 4;
+  width: 40%;
   h3 {
     font-size: 0.9rem;
   }
   p {
     font-size: 0.9rem;
-    color: rgba(0, 0, 0, 0.801);
+    margin: 0.35rem 0 0 0;
   }
 }
 
 .sitemap {
-  grid-column: 7 / 10;
   h3 {
     font-size: 0.9rem;
   }
@@ -411,13 +390,12 @@ footer {
     padding: 0.1rem 0;
   }
   a {
+    color: #ffffff;
     text-decoration: none;
-    color: rgba(32, 32, 32, 0.966);
   }
 }
 
 .social {
-  grid-column: 11 / 12;
   h3 {
     font-size: 0.9rem;
   }
@@ -432,8 +410,8 @@ footer {
     padding: 0.1rem 0;
   }
   a {
+    color: #ffffff;
     text-decoration: none;
-    color: rgba(32, 32, 32, 0.966);
   }
 }
 @media screen and (max-width: $mobile-size) {
