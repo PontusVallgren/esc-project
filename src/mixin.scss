@@ -1,0 +1,48 @@
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+@mixin primary-btn($bgColor, $textColor, $size) {
+  background-color: $bgColor;
+  color: $textColor;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0.3rem;
+  padding: 0.6rem 1rem;
+  font-size: $size;
+}
+@mixin secondary-btn($bgColor, $textColor) {
+  background-color: $bgColor;
+  color: $textColor;
+  text-align: center;
+  text-decoration: none;
+  border: solid 0.15em lightgray;
+  padding: 0.5em 1.1em;
+  border-radius: 0.3em;
+}
+@mixin third-btn($bgColor, $textColor, $size) {
+  background-color: $bgColor;
+  color: $textColor;
+  font-size: $size;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 0;
+  border-bottom: solid 0.15rem lightgrey;
+  padding: 0;
+}
+
+/* Button Variables */
+
+$primary-btn-bgcolor: blue;
+$primary-btn-textcolor: white;
+
+$secondary-btn-bgcolor: white;
+$secondary-btn-textcolor: blue;
+
+/* Screen-sizes Variables */
+
+$desktop-size: 100%;
+$mobile-size: 800px;

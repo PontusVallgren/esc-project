@@ -1,44 +1,4 @@
-$primary-btn-bgcolor: blue;
-$primary-btn-textcolor: white;
-
-$secondary-btn-bgcolor: white;
-$secondary-btn-textcolor: blue;
-
-@mixin flex($direction, $justify, $align) {
-  display: flex;
-  flex-direction: $direction;
-  justify-content: $justify;
-  align-items: $align;
-}
-@mixin primary-btn($bgColor, $textColor, $size) {
-  background-color: $bgColor;
-  color: $textColor;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 0.3rem;
-  padding: 0.6rem 1rem;
-  font-size: $size;
-}
-@mixin secondary-btn($bgColor, $textColor) {
-  background-color: $bgColor;
-  color: $textColor;
-  text-align: center;
-  text-decoration: none;
-  border: solid 0.15em lightgray;
-  padding: 0.5em 1.1em;
-  border-radius: 0.3em;
-}
-@mixin third-btn($bgColor, $textColor, $size) {
-  background-color: $bgColor;
-  color: $textColor;
-  font-size: $size;
-  text-align: center;
-  text-decoration: none;
-  border: none;
-  border-radius: 0;
-  border-bottom: solid 0.15rem lightgrey;
-  padding: 0;
-}
+@import "mixin.scss";
 
 * {
   padding: 0;
@@ -46,7 +6,7 @@ $secondary-btn-textcolor: blue;
   box-sizing: border-box;
 }
 html {
-  width: 100%;
+  max-width: 100%;
   height: 100%;
   font-size: 16px;
   font-family: "arial narrow";
@@ -74,7 +34,7 @@ html {
     margin: 0 0.5rem 0 0;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: $mobile-size) {
   .header-text {
     @include flex(column, center, flex-start);
 
@@ -106,7 +66,7 @@ html {
   display: none;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: $mobile-size) {
   .navbar {
     display: none;
   }
@@ -137,7 +97,7 @@ html {
     background-color: lightgray;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: $mobile-size) {
   .hero-container {
     height: 190px;
   }
@@ -164,7 +124,7 @@ html {
     font-size: 0.8em;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: $mobile-size) {
   .hero-buttons {
     @include flex(column-reverse, center, center);
     transform: translateY(-30%);
@@ -209,7 +169,7 @@ html {
     margin: 0.3rem 0;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: $mobile-size) {
   .hide {
     display: none;
   }
@@ -218,7 +178,7 @@ html {
   @include flex(row, center, center);
   height: 100%;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: $mobile-size) {
   .challenges-card-container {
     justify-content: flex-start;
     overflow-x: scroll;
@@ -305,7 +265,7 @@ html {
     border-bottom: none;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: $mobile-size) {
   .challenge-buttons {
     @include flex(column, center, center);
   }
@@ -336,7 +296,7 @@ html {
   font-size: 0.9rem;
   margin: 3em 0 0 0;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: $mobile-size) {
   .story-btn {
     font-size: 1rem;
   }
@@ -350,7 +310,7 @@ html {
   @include flex(row, center, center);
   width: 100%;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: $mobile-size) {
   .grid-card {
     @include flex(column, center, center);
   }
@@ -382,7 +342,7 @@ html {
   height: 275px;
   background-color: lightgrey;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: $mobile-size) {
   .grid-image {
     height: 150px;
   }
@@ -405,7 +365,7 @@ i {
   margin: 0 0.5rem 0 0;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: $mobile-size) {
   .grid-buttons {
     @include flex(column-reverse, center, flex-start);
   }
@@ -416,16 +376,17 @@ i {
 }
 
 footer {
-  @include flex(row, space-evenly, flex-start);
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
   margin: 5em 0 0 0;
-  padding: 5rem 5rem;
+  padding: 5rem 2rem;
   background-color: lightsteelblue;
 }
 
 .company {
-  width: 40%;
+  grid-column: 1 / 4;
   h3 {
-    margin: 0 0 0.35rem 0;
     font-size: 0.9rem;
   }
   p {
@@ -435,6 +396,7 @@ footer {
 }
 
 .sitemap {
+  grid-column: 7 / 10;
   h3 {
     font-size: 0.9rem;
   }
@@ -455,6 +417,7 @@ footer {
 }
 
 .social {
+  grid-column: 11 / 12;
   h3 {
     font-size: 0.9rem;
   }
@@ -473,13 +436,17 @@ footer {
     color: rgba(32, 32, 32, 0.966);
   }
 }
-@media screen and (max-width: 800px) {
-  footer {
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
+@media screen and (max-width: $mobile-size) {
   .company {
-    width: 100%;
+    grid-column: 1 / 12;
     margin: 0 0 2rem 0;
+  }
+  .sitemap {
+    grid-column: 1 / 6;
+    grid-row: 2 / 2;
+  }
+  .social {
+    grid-column: 7 / 12;
+    grid-row: 2 / 2;
   }
 }
