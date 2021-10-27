@@ -4,33 +4,33 @@
   justify-content: $justify;
   align-items: $align;
 }
-@mixin primary-btn($bgColor, $textColor, $size) {
+@mixin primary-btn($bgColor, $textColor) {
   background-color: $bgColor;
   color: $textColor;
   text-align: center;
   text-decoration: none;
   border-radius: 4px;
-  padding: 0.6rem 1rem;
-  font-size: $size;
 }
-@mixin secondary-btn($bgColor, $textColor, $size) {
+@mixin secondary-btn($bgColor, $textColor) {
   background-color: $bgColor;
   color: $textColor;
   text-align: center;
   text-decoration: none;
-  padding: 0.6rem 1rem;
   border-radius: 4px;
-  font-size: $size;
 }
-@mixin third-btn($bgColor, $textColor, $size) {
+@mixin third-btn($bgColor, $textColor) {
   background-color: $bgColor;
   color: $textColor;
-  font-size: $size;
   text-align: center;
   text-decoration: none;
   border: 2px solid #8acfe6;
   border-radius: 4px;
-  padding: 0.6rem 1rem;
+}
+@mixin font($font-size, $line-height, $font-weight, $font-style) {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  font-style: $font-style;
 }
 
 /* Button Variables */
