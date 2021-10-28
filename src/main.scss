@@ -17,7 +17,6 @@ header {
   background-color: #011827;
   height: 13.5rem;
 }
-
 .header-logo {
   @include flex(row, flex-start, flex-end);
   img {
@@ -30,7 +29,6 @@ header {
   @include flex(row, center, center);
   color: #ffffff;
   margin: 0 0 1rem 1rem;
-
   h1 {
     @include font(2.5rem, 2.93rem, 700, normal);
     margin: 0 0.5rem 0 0;
@@ -65,6 +63,9 @@ header {
     height: 100%;
     list-style: none;
   }
+  li {
+    padding: 1em 0;
+  }
   a {
     @include font(1.5rem, 1.75rem, 700, normal);
     color: #ffffff;
@@ -73,9 +74,9 @@ header {
     text-decoration: none;
     cursor: pointer;
   }
-  li {
-    padding: 1em 0;
-  }
+}
+#contact-btn {
+  color: #8acfe5;
 }
 @media screen and (max-width: $mobile-size) {
   .navbar {
@@ -86,16 +87,12 @@ header {
 /* || Main Content */
 
 .hero-container {
-  height: 468px;
+  height: 29.25rem;
   width: 100%;
-
   img {
     height: 100%;
     width: 100%;
-    object-fit: cover;
   }
-}
-@media screen and (max-width: $mobile-size) {
 }
 .hero-buttons {
   @include flex(row, center, center);
@@ -104,15 +101,11 @@ header {
 .hero-online-btn {
   @include primary-btn($primary-btn-bgcolor, $primary-btn-textcolor);
   @include font(1.5rem, 1.758125rem, 700, normal);
-  width: 19.25rem;
-  padding: 1.1875rem 0;
   margin: 0 0.5rem;
 }
 .hero-onsite-btn {
   @include secondary-btn($secondary-btn-bgcolor, $secondary-btn-textcolor);
   @include font(1.5rem, 1.758125rem, 700, normal);
-  width: 19.25rem;
-  padding: 1.1875rem 0;
   margin: 0 0.5rem;
 }
 @media screen and (max-width: $mobile-size) {
@@ -127,13 +120,11 @@ header {
   .hero-online-btn {
     @include third-btn($secondary-btn-bgcolor, $secondary-btn-textcolor);
     @include font(1rem, 1.1718rem, 700, normal);
-    margin: 1.875rem 0 0 0;
+    margin: 1rem 0 0 0;
     background-color: white;
     color: #36769d;
     text-decoration: underline;
     border: none;
-    border-radius: 0;
-    padding: 0;
   }
 }
 
@@ -143,12 +134,12 @@ header {
 }
 .review {
   @include flex(row, center, center);
-  width: 600px;
+  width: 37.5rem;
 
   img {
-    float: left;
-    border-radius: 50%;
-    padding: 0 0.5em;
+    align-self: flex-start;
+    border-radius: 51.75rem;
+    margin: 0 0.5em;
     height: 6.6875rem;
     width: 6rem;
   }
@@ -159,7 +150,7 @@ header {
   cite {
     display: block;
     @include font(1.125rem, 1.318125rem, 400, normal);
-    margin: 0.3rem 0;
+    margin: 1rem 0;
   }
 }
 @media screen and (max-width: $mobile-size) {
@@ -183,33 +174,14 @@ header {
 .challenges-card-container {
   @include flex(row, center, center);
   height: 100%;
-  /*  overflow-x: scroll; */
 }
-/* ::-webkit-scrollbar {
-  display: none;
-} */
-@media screen and (max-width: $mobile-size) {
-  .challenges-card-container {
-    justify-content: flex-start;
-    overflow-x: scroll;
-  }
-  ::-webkit-scrollbar {
-    display: none;
-  }
-  .challenge-card {
-    min-width: 363px;
-  }
-}
+
 .challenge-card {
   height: 100%;
   min-width: 363px;
   margin: 1rem 0.8rem;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
-
-  a {
-    @include primary-btn($primary-btn-bgcolor, $primary-btn-textcolor);
-  }
 }
 .card-image-container {
   position: relative;
@@ -219,16 +191,6 @@ header {
     min-width: 363px;
     height: 219px;
     border-radius: 8px 8px 0px 0px;
-  }
-}
-.challenge-rating {
-  @include flex(row, space-between, flex-start);
-  margin: 0 0 1rem 0.8rem;
-  width: 90%;
-  i {
-    width: 1.4425rem;
-    height: 1.625rem;
-    color: #e3170a;
   }
 }
 .card-text-container {
@@ -246,18 +208,50 @@ header {
     margin: 0 0 0 0.8rem;
   }
 }
+.challenge-rating {
+  @include flex(row, space-between, flex-start);
+  margin: 0 0 1rem 0.8rem;
+  width: 90%;
+  i {
+    width: 1.4425rem;
+    height: 1.625rem;
+    color: #e3170a;
+  }
+}
 .card-btn-container {
   @include flex(row, flex-end, flex-end);
   margin: 1rem 0.8rem 1rem 0;
   a {
+    @include primary-btn($primary-btn-bgcolor, $primary-btn-textcolor);
     @include font(1rem, 1.1718rem, 700, normal);
     width: 11.205rem;
-    padding: 1.375rem 0;
+    padding: 0.8125rem 0;
+  }
+}
+@media screen and (max-width: 1140px) {
+  .challenges-card-container {
+    justify-content: flex-start;
+    overflow-x: scroll;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+@media screen and (max-width: $mobile-size) {
+  .challenges-card-container {
+    justify-content: flex-start;
+    overflow-x: scroll;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  .challenge-card {
+    min-width: 363px;
   }
 }
 .challenge-buttons {
   @include flex(row, center, center);
-  margin: 3em 0 0 0;
+  margin: 3rem 0 0 0;
 }
 .challenge-online-btn {
   @include primary-btn($primary-btn-bgcolor, $primary-btn-textcolor);
@@ -269,8 +263,6 @@ header {
 .challenge-onsite-btn {
   @include secondary-btn($secondary-btn-bgcolor, $secondary-btn-textcolor);
   @include font(1.5rem, 1.758125rem, 700, normal);
-  width: 19.25rem;
-  padding: 1.1875rem 0;
   margin: 0 0 0 0.5rem;
 }
 @media screen and (max-width: $mobile-size) {
@@ -279,11 +271,9 @@ header {
   }
   .challenge-online-btn {
     @include third-btn($secondary-btn-bgcolor, $secondary-btn-textcolor);
-    margin: 0.5rem 0;
     background-color: white;
     color: #36769d;
     border: none;
-    border-radius: 0;
     text-decoration-line: underline;
   }
 }
@@ -304,22 +294,19 @@ header {
 .story-btn {
   @include third-btn($third-btn-bgcolor, $third-btn-textcolor);
   @include font(1.5rem, 1.758125, 700, normal);
-  margin: 3em 0 0 0;
-  width: 19.25rem;
+  margin: 3rem 0 0 0;
   padding: 0.625rem 0;
 }
 @media screen and (max-width: $mobile-size) {
   .company-story {
-    width: 100%;
     p {
-      /* width: 27.4375rem; */
-      width: 20rem;
+      width: 100%;
     }
   }
 }
 
 .grid-section-container {
-  @include flex(column, center, center);
+  @include flex(column, flex-start, center);
   height: 930px;
 }
 .grid-card {
@@ -328,21 +315,22 @@ header {
   height: 100%;
 }
 .grid-content {
+  @include flex(column, center, center);
   width: 100%;
   height: 100%;
 }
 .grid-text {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 26rem;
 
   h3 {
     @include font(2rem, 2.34375rem, 700, normal);
-    margin: 3rem 2rem 1rem 2rem;
+    margin: 0 0 1.5625rem 0;
   }
   p {
     @include font(1.5rem, 1.7581rem, 400, normal);
-    margin: 0 2rem;
+    margin: 0 0 1.5625rem 0;
   }
 }
 .grid-image {
@@ -351,20 +339,20 @@ header {
   img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
   }
 }
 .grid-buttons {
   display: flex;
   flex-direction: row;
-  margin: 2rem 2rem;
+  width: 26rem;
+  margin: 0 0 1.875rem 0;
 }
-
 .grid-btn {
   @include primary-btn($primary-btn-bgcolor, $primary-btn-textcolor);
   @include font(1.5rem, 1.758125rem, 700, normal);
   width: 19.25rem;
   padding: 1.1875rem 0;
-  margin: 0 0.5rem 0 0;
 }
 @media screen and (max-width: $mobile-size) {
   .grid-section-container {
@@ -380,7 +368,11 @@ header {
     width: 100%;
   }
   .grid-image {
-    height: 300px;
+    width: 100%;
+    height: 18.75rem;
+  }
+  .grid-content {
+    width: 100%;
   }
   .grid-text {
     display: flex;
@@ -390,13 +382,17 @@ header {
     h3 {
       font-size: 2rem;
       line-height: 2.34rem;
-      margin: 3rem 2rem 1rem 2rem;
+      margin: 2.5rem 1.25rem 2.5rem 1.25rem;
     }
     p {
       font-size: 1.5rem;
       line-height: 1.75rem;
-      margin: 0 2rem;
+      margin: 0 1.25rem;
     }
+  }
+  .grid-buttons {
+    width: 100%;
+    margin: 2.5rem 1.25rem 2.5rem 3.25rem;
   }
 }
 

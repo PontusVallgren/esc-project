@@ -4,9 +4,20 @@
   justify-content: $justify;
   align-items: $align;
 }
+@mixin font($font-size, $line-height, $font-weight, $font-style) {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  font-style: $font-style;
+}
+
+/* Button Design */
+
 @mixin primary-btn($bgColor, $textColor) {
   background-color: $bgColor;
   color: $textColor;
+  width: 19.25rem;
+  padding: 1.1875rem 0;
   text-align: center;
   text-decoration: none;
   border-radius: 4px;
@@ -14,6 +25,8 @@
 @mixin secondary-btn($bgColor, $textColor) {
   background-color: $bgColor;
   color: $textColor;
+  width: 19.25rem;
+  padding: 1.1875rem 0;
   text-align: center;
   text-decoration: none;
   border-radius: 4px;
@@ -21,16 +34,11 @@
 @mixin third-btn($bgColor, $textColor) {
   background-color: $bgColor;
   color: $textColor;
+  width: 19.25rem;
   text-align: center;
   text-decoration: none;
   border: 2px solid #8acfe6;
   border-radius: 4px;
-}
-@mixin font($font-size, $line-height, $font-weight, $font-style) {
-  font-size: $font-size;
-  line-height: $line-height;
-  font-weight: $font-weight;
-  font-style: $font-style;
 }
 
 /* Button Variables */
@@ -47,4 +55,4 @@ $third-btn-textcolor: #8acfe5;
 /* Screen-sizes Variables */
 
 $desktop-size: 100%;
-$mobile-size: 800px;
+$mobile-size: 835px;
