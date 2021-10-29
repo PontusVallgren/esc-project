@@ -116,7 +116,7 @@ header {
   }
   .hero-buttons {
     @include flex(column-reverse, center, center);
-    transform: translateY(30%);
+    margin: 6.2rem 0 0 0;
   }
   .hero-online-btn {
     @include third-btn($secondary-btn-bgcolor, $secondary-btn-textcolor);
@@ -390,7 +390,10 @@ header {
   }
   .grid-buttons {
     width: 100%;
-    margin: 2.5rem 1.25rem 2.5rem 3.25rem;
+    margin: 2.5rem 0;
+  }
+  .grid-btn {
+    margin: 0 0 0 1.25rem;
   }
 }
 
