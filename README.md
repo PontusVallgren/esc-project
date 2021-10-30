@@ -15,6 +15,8 @@ SASS / CSS
 
 Learnings:
 
+Better understanding how to build a responsive web design with media queries.
+
 First time using SASS and had a great experience with laborating with nesting, variables, mixins and placeholders. That gave me a better working flow and made me avoid duplicating code over and over again.
 
 Reading up alot and got a better understanding about accessibility and how semantic HTML will help with that. First time using a screen reader to help understand the importance of semantic HTML.
