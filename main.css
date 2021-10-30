@@ -1,6 +1,36 @@
-/* Button Design */
-/* Button Variables */
+/* Color Variables */
 /* Screen-sizes Variables */
+.grid-btn, .challenge-online-btn, .card-btn-container a, .hero-online-btn {
+  background-color: #e3170a;
+  color: white;
+  width: 19.25rem;
+  padding: 1.1875rem 0;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.challenge-onsite-btn, .hero-onsite-btn {
+  background-color: #8acfe5;
+  color: black;
+  width: 19.25rem;
+  padding: 1.1875rem 0;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.story-btn {
+  background-color: transparent;
+  color: #8acfe5;
+  width: 19.25rem;
+  padding: 0.625rem 0;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid #8acfe6;
+  border-radius: 4px;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -103,8 +133,7 @@ header {
   text-decoration: none;
   cursor: pointer;
 }
-
-#contact-btn {
+.navbar a:hover {
   color: #8acfe5;
 }
 
@@ -132,13 +161,6 @@ header {
 }
 
 .hero-online-btn {
-  background-color: #e3170a;
-  color: white;
-  width: 19.25rem;
-  padding: 1.1875rem 0;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 4px;
   font-size: 1.5rem;
   line-height: 1.758125rem;
   font-weight: 700;
@@ -147,13 +169,6 @@ header {
 }
 
 .hero-onsite-btn {
-  background-color: #8acfe5;
-  color: black;
-  width: 19.25rem;
-  padding: 1.1875rem 0;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 4px;
   font-size: 1.5rem;
   line-height: 1.758125rem;
   font-weight: 700;
@@ -176,19 +191,12 @@ header {
   }
 
   .hero-online-btn {
-    background-color: #8acfe5;
-    color: black;
-    width: 19.25rem;
-    text-align: center;
-    text-decoration: none;
-    border: 2px solid #8acfe6;
-    border-radius: 4px;
     font-size: 1rem;
     line-height: 1.1718rem;
     font-weight: 700;
     font-style: normal;
     margin: 1rem 0 0 0;
-    background-color: white;
+    background-color: transparent;
     color: #36769d;
     text-decoration: underline;
     border: none;
@@ -331,13 +339,6 @@ header {
   margin: 1rem 0.8rem 1rem 0;
 }
 .card-btn-container a {
-  background-color: #e3170a;
-  color: white;
-  width: 19.25rem;
-  padding: 1.1875rem 0;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 4px;
   font-size: 1rem;
   line-height: 1.1718rem;
   font-weight: 700;
@@ -379,13 +380,6 @@ header {
 }
 
 .challenge-online-btn {
-  background-color: #e3170a;
-  color: white;
-  width: 19.25rem;
-  padding: 1.1875rem 0;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 4px;
   font-size: 1.5rem;
   line-height: 1.758125rem;
   font-weight: 700;
@@ -396,13 +390,6 @@ header {
 }
 
 .challenge-onsite-btn {
-  background-color: #8acfe5;
-  color: black;
-  width: 19.25rem;
-  padding: 1.1875rem 0;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 4px;
   font-size: 1.5rem;
   line-height: 1.758125rem;
   font-weight: 700;
@@ -419,14 +406,7 @@ header {
   }
 
   .challenge-online-btn {
-    background-color: #8acfe5;
-    color: black;
-    width: 19.25rem;
-    text-align: center;
-    text-decoration: none;
-    border: 2px solid #8acfe6;
-    border-radius: 4px;
-    background-color: white;
+    background-color: transparent;
     color: #36769d;
     border: none;
     text-decoration-line: underline;
@@ -453,19 +433,11 @@ header {
 }
 
 .story-btn {
-  background-color: transparent;
-  color: #8acfe5;
-  width: 19.25rem;
-  text-align: center;
-  text-decoration: none;
-  border: 2px solid #8acfe6;
-  border-radius: 4px;
   font-size: 1.5rem;
   line-height: 1.758125;
   font-weight: 700;
   font-style: normal;
   margin: 3rem 0 0 0;
-  padding: 0.625rem 0;
 }
 
 @media screen and (max-width: 835px) {
@@ -537,13 +509,6 @@ header {
 }
 
 .grid-btn {
-  background-color: #e3170a;
-  color: white;
-  width: 19.25rem;
-  padding: 1.1875rem 0;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 4px;
   font-size: 1.5rem;
   line-height: 1.758125rem;
   font-weight: 700;

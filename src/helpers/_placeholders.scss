@@ -1,0 +1,28 @@
+%primary-btn {
+  background-color: $primary-btn-bgcolor;
+  color: $primary-btn-textcolor;
+  width: 19.25rem;
+  padding: 1.1875rem 0;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+}
+%secondary-btn {
+  background-color: $secondary-btn-bgcolor;
+  color: $secondary-btn-textcolor;
+  width: 19.25rem;
+  padding: 1.1875rem 0;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+}
+%third-btn {
+  background-color: $third-btn-bgcolor;
+  color: $third-btn-textcolor;
+  width: 19.25rem;
+  padding: 0.625rem 0;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid #8acfe6;
+  border-radius: 4px;
+}

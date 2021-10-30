@@ -1,4 +1,6 @@
-@import "mixin.scss";
+@import "./helpers/mixin";
+@import "./helpers/variables";
+@import "./helpers/placeholders";
 
 * {
   padding: 0;
@@ -75,9 +77,9 @@ header {
     text-decoration: none;
     cursor: pointer;
   }
-}
-#contact-btn {
-  color: #8acfe5;
+  a:hover {
+    color: #8acfe5;
+  }
 }
 @media screen and (max-width: $mobile-size) {
   .navbar {
@@ -100,12 +102,12 @@ header {
   transform: translateY(-50%);
 }
 .hero-online-btn {
-  @include primary-btn($primary-btn-bgcolor, $primary-btn-textcolor);
+  @extend %primary-btn;
   @include font(1.5rem, 1.758125rem, 700, normal);
   margin: 0 0.5rem;
 }
 .hero-onsite-btn {
-  @include secondary-btn($secondary-btn-bgcolor, $secondary-btn-textcolor);
+  @extend %secondary-btn;
   @include font(1.5rem, 1.758125rem, 700, normal);
   margin: 0 0.5rem;
 }
@@ -119,10 +121,9 @@ header {
     margin: 6.2rem 0 0 0;
   }
   .hero-online-btn {
-    @include third-btn($secondary-btn-bgcolor, $secondary-btn-textcolor);
     @include font(1rem, 1.1718rem, 700, normal);
     margin: 1rem 0 0 0;
-    background-color: white;
+    background-color: transparent;
     color: #36769d;
     text-decoration: underline;
     border: none;
@@ -224,7 +225,7 @@ header {
   @include flex(row, flex-end, flex-end);
   margin: 1rem 0.8rem 1rem 0;
   a {
-    @include primary-btn($primary-btn-bgcolor, $primary-btn-textcolor);
+    @extend %primary-btn;
     @include font(1rem, 1.1718rem, 700, normal);
     width: 11.205rem;
     padding: 0.8125rem 0;
@@ -256,14 +257,14 @@ header {
   margin: 5.625rem 0;
 }
 .challenge-online-btn {
-  @include primary-btn($primary-btn-bgcolor, $primary-btn-textcolor);
+  @extend %primary-btn;
   @include font(1.5rem, 1.758125rem, 700, normal);
   width: 19.25rem;
   padding: 1.1875rem 0;
   margin: 0 0.5rem 0 0;
 }
 .challenge-onsite-btn {
-  @include secondary-btn($secondary-btn-bgcolor, $secondary-btn-textcolor);
+  @extend %secondary-btn;
   @include font(1.5rem, 1.758125rem, 700, normal);
   margin: 0 0 0 0.5rem;
 }
@@ -272,8 +273,7 @@ header {
     @include flex(column-reverse, center, center);
   }
   .challenge-online-btn {
-    @include third-btn($secondary-btn-bgcolor, $secondary-btn-textcolor);
-    background-color: white;
+    background-color: transparent;
     color: #36769d;
     border: none;
     text-decoration-line: underline;
@@ -294,10 +294,9 @@ header {
   }
 }
 .story-btn {
-  @include third-btn($third-btn-bgcolor, $third-btn-textcolor);
+  @extend %third-btn;
   @include font(1.5rem, 1.758125, 700, normal);
   margin: 3rem 0 0 0;
-  padding: 0.625rem 0;
 }
 @media screen and (max-width: $mobile-size) {
   .company-story {
@@ -351,7 +350,7 @@ header {
   margin: 0 0 1.875rem 0;
 }
 .grid-btn {
-  @include primary-btn($primary-btn-bgcolor, $primary-btn-textcolor);
+  @extend %primary-btn;
   @include font(1.5rem, 1.758125rem, 700, normal);
   width: 19.25rem;
   padding: 1.1875rem 0;
