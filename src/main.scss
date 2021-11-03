@@ -39,6 +39,8 @@ header {
 }
 @media screen and (max-width: $mobile-size) {
   header {
+    display: flex;
+    justify-content: space-between;
     height: 9rem;
   }
   .header-logo {
@@ -81,9 +83,61 @@ header {
     color: #8acfe5;
   }
 }
+.navbar-mobile {
+  display: none;
+}
+.burger-close-btn {
+  display: none;
+}
 @media screen and (max-width: $mobile-size) {
   .navbar {
+    @include flex(column, flex-end, flex-end);
     display: none;
+    position: absolute;
+    width: 95%;
+    height: 100%;
+    z-index: 1;
+    top: 2%;
+    left: 2.5%;
+    right: 2.5%;
+    background-color: #011827;
+    border: 1px solid white;
+    ul {
+      @include flex(column, center, center);
+      height: 100%;
+      width: 100%;
+      list-style: none;
+    }
+    li {
+      padding: 2rem 0;
+    }
+    a {
+      @include font(1.5rem, 1.75rem, 700, normal);
+      color: #ffffff;
+      padding: 1rem;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    a:hover {
+      color: #8acfe5;
+    }
+  }
+  .burger-close-btn {
+    display: block;
+    font-size: 3rem;
+    color: white;
+    margin: 0.8rem 1.6875rem 0 0;
+  }
+  .navbar-mobile {
+    display: block;
+    margin: 1.625rem 1.6875rem 0 0;
+  }
+  .burger-btn {
+    font-size: 3rem;
+    color: white;
+    background-color: transparent;
+    border: none;
   }
 }
 
