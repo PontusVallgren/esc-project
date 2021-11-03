@@ -1,4 +1,4 @@
-// DOM Stuff
+// Calling DOM
 const burgerOpen = document.querySelector(".burger-open-btn");
 const burgerClose = document.querySelector(".burger-close-btn");
 const navbar = document.querySelector(".navbar");
