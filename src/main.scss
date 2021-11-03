@@ -13,7 +13,17 @@ html {
   font-size: 16px;
   font-family: "Roboto";
 }
-
+body.active {
+  animation: fadeIn 0.3s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
 /* || Header and Main Navigation */
 
 header {
@@ -93,12 +103,9 @@ header {
   .navbar {
     @include flex(column, flex-end, flex-end);
     position: absolute;
-    width: 95%;
+    width: 100%;
     height: 100%;
     z-index: 1;
-    top: 2.5%;
-    left: 2.5%;
-    right: 2.5%;
     background-color: #011827;
     ul {
       @include flex(column, center, center);
