@@ -44,7 +44,6 @@ html {
   font-family: "Roboto";
 }
 
-/* || Header and Main Navigation */
 header {
   background-color: #011827;
   height: 13.5rem;
@@ -223,7 +222,6 @@ header {
     display: none;
   }
 }
-/* || Main Content */
 .hero-container {
   height: 29.25rem;
   width: 100%;
@@ -623,7 +621,7 @@ header {
 
   .grid-image {
     width: 100%;
-    height: 18.75rem;
+    height: 300px;
   }
   .grid-image img {
     object-fit: cover;

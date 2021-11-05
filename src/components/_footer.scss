@@ -1,0 +1,72 @@
+footer {
+  @include flex(row, space-around, flex-start);
+  height: 29.1875rem;
+  margin: 11.25rem 0 0 0;
+  padding: 10rem 2rem 0 2rem;
+  background-color: #011827;
+  color: #ffffff;
+}
+
+.company {
+  width: 40%;
+  h3 {
+    @include font(1.125rem, 1.3181rem, 700, normal);
+  }
+  p {
+    @include font(1.125rem, 1.3181rem, 400, normal);
+    margin: 0.35rem 0 0 0;
+  }
+}
+
+.sitemap {
+  h3 {
+    @include font(1.125rem, 1.3181rem, 700, normal);
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0.35rem 0 0 0;
+  }
+  li {
+    padding: 0.1rem 0;
+  }
+  a {
+    @include font(1.125rem, 1.3181rem, 400, normal);
+    color: #ffffff;
+    text-decoration: none;
+  }
+}
+
+.social {
+  h3 {
+    @include font(1.125rem, 1.3181rem, 700, normal);
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0.35rem 0 0 0;
+  }
+  li {
+    padding: 0.1rem 0;
+  }
+  a {
+    @include font(1.125rem, 1.3181rem, 400, normal);
+    color: #ffffff;
+    text-decoration: none;
+  }
+}
+@media screen and (max-width: $mobile-size) {
+  footer {
+    @include flex(column, flex-start, flex-start);
+    height: 100%;
+    padding: 2rem 0 2rem 1rem;
+    h3 {
+      margin: 1.5rem 0 0 0;
+    }
+  }
+  .company {
+    width: 95%;
+  }
+}

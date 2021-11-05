@@ -1,0 +1,27 @@
+.company-story {
+  @include flex(column, center, center);
+  background-color: #011827;
+  height: 31.25rem;
+  width: 100%;
+  margin: 5rem 0 0 0;
+
+  p {
+    @include font(1.75rem, 2.0506rem, 400, normal);
+    width: 39.5rem;
+    color: #ffffff;
+    text-align: center;
+  }
+}
+.story-btn {
+  @extend %third-btn;
+  @include font(1.5rem, 1.758125, 700, normal);
+  margin: 3rem 0 0 0;
+}
+@media screen and (max-width: $mobile-size) {
+  .company-story {
+    p {
+      width: 100%;
+      padding: 0 2rem;
+    }
+  }
+}

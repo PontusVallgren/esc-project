@@ -1,0 +1,40 @@
+.hero-container {
+  height: 29.25rem;
+  width: 100%;
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+.hero-buttons {
+  @include flex(row, center, center);
+  transform: translateY(-50%);
+}
+.hero-online-btn {
+  @extend %primary-btn;
+  @include font(1.5rem, 1.758125rem, 700, normal);
+  margin: 0 0.5rem;
+}
+.hero-onsite-btn {
+  @extend %secondary-btn;
+  @include font(1.5rem, 1.758125rem, 700, normal);
+  margin: 0 0.5rem;
+}
+@media screen and (max-width: $mobile-size) {
+  .hero-container {
+    height: 274px;
+    margin: 0 0 10rem 0;
+  }
+  .hero-buttons {
+    @include flex(column-reverse, center, center);
+    margin: 6.2rem 0 0 0;
+  }
+  .hero-online-btn {
+    @include font(1rem, 1.1718rem, 700, normal);
+    margin: 1rem 0 0 0;
+    background-color: transparent;
+    color: #36769d;
+    text-decoration: underline;
+    border: none;
+  }
+}
