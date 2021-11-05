@@ -44,18 +44,6 @@ html {
   font-family: "Roboto";
 }
 
-body.active {
-  animation: fadeIn 0.3s;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.6;
-  }
-}
 /* || Header and Main Navigation */
 header {
   background-color: #011827;
@@ -166,8 +154,12 @@ header {
     justify-content: flex-end;
     align-items: flex-end;
     position: absolute;
-    width: 100%;
-    height: 100%;
+    right: 2.5%;
+    left: 2.5%;
+    top: 2.5%;
+    bottom: 2.5%;
+    width: 95%;
+    height: 95%;
     z-index: 1;
     background-color: #011827;
   }
@@ -195,6 +187,15 @@ header {
   }
   .navbar a:hover {
     color: #8acfe5;
+  }
+
+  .navbarBg {
+    background-color: rgba(255, 255, 255, 0.5);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
   }
 
   .burger-close-btn {
