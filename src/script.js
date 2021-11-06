@@ -3,6 +3,7 @@ const burgerOpen = document.querySelector(".burger-open-btn");
 const burgerClose = document.querySelector(".burger-close-btn");
 const navbar = document.querySelector(".navbar");
 const body = document.querySelector("body");
+const header = document.querySelector("header");
 
 // Functions
 
@@ -18,16 +19,16 @@ const createElements = () => {
 const handleOpenMobileMenu = () => {
   const navbarBg = createElements();
   navbarBg.animate([{ opacity: 0 }, { opacity: 0.5 }], {
-    duration: 300,
+    duration: 200,
   });
-  setTimeout(() => navbar.classList.remove("hidden"), 300);
+  setTimeout(() => navbar.classList.remove("hidden"), 200);
 };
 
 const handleCloseMobileMenu = () => {
   const nvbg = document.querySelector(".navbarBg");
-  nvbg.removeChild(navbar);
-  body.removeChild(nvbg);
   navbar.classList.add("hidden");
+  header.append(navbar);
+  body.removeChild(nvbg);
 };
 
 // Events
